@@ -14,12 +14,13 @@ import retrofit2.Response
 class KinopoiskViewModel : ViewModel() {
 
     val liveFilmsList = MutableLiveData<List<FilmInfo>>()
+    val liveError = MutableLiveData<String>()
     private val repo = DataHelper.getRepository()
 
 
     // Асинхронно обрабатываем отправленный запрос получения популярных фильмов
     // Обрабатываем исключения
-    fun updateData() {
+    fun loadData() {
         repo.getFilmListByApi().enqueue(object : Callback<FilmListDTO> {
             override fun onResponse(call: Call<FilmListDTO>, response: Response<FilmListDTO>) {
                 try {
@@ -29,14 +30,15 @@ class KinopoiskViewModel : ViewModel() {
                         (response.body() as FilmListDTO).toString()
                     )
                 } catch (e: NullPointerException) {
+                    liveError.value = "Сервер временно не отвечает. Попробуйте позже"
                     Log.e("API_CONNECTION", "Сервер не предоставил необходимую информацию")
                 }
             }
 
             override fun onFailure(call: Call<FilmListDTO>, t: Throwable) {
+                liveError.value = "Проверьте ваше интернет соединение"
                 Log.e("API_CONNECTION", "Ошибка выполнения запроса из сети")
             }
         })
     }
-
 }

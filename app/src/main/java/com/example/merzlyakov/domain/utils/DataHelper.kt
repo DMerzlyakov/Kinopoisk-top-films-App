@@ -7,8 +7,6 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.create
 
-
-
 object DataHelper {
     fun getRepository(): RepositoryImpl {
         return RepositoryImpl(getInstance())
