@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Merzlyakov</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="popular">Популярное</string>
+    <string name="favourites">Избранное</string>
+    <string name="find">Поиск</string>
+    <string name="back">Назад</string>
+    <string name="img">Постер фильма</string>
 </resources>
