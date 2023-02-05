@@ -1,2 +1,8 @@
 # Merzlyakov
-Fintech Tinkoff - Moblie - Android - 2023
+Fintech Tinkoff - Mobile - Android - 2023
+
+## Доделать
+- Обработка большего количества ошибок
+- Кеширование
+- Тестирование
+- Поиск по названию

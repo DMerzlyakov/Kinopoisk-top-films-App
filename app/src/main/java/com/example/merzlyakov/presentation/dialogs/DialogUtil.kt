@@ -18,9 +18,4 @@ object DialogUtil {
         alert.setTitle("Ошибка")
         alert.show()
     }
-
-    // Интерфейс для того, чтобы проще было реализовывать листненеры для диалоговых окон
-    interface Listener {
-        fun getData(name: String)
-    }
 }
