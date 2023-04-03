@@ -1,5 +1,4 @@
 # Merzlyakov
-Fintech Tinkoff - Mobile - Android - 2023
 
 ## Доделать
 - Обработка большего количества ошибок
